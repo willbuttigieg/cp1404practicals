@@ -1,4 +1,7 @@
 """
+CP1404 Practical
+Score Menu
+
 display menu
 get choice
 while choice != <quit option>
