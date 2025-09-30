@@ -32,12 +32,12 @@ cost = 16035.9
 # for i, number in enumerate(numbers, 1):
 #     print(f"Number {i} is {number:5}")
 
-# TODO: Use f-string formatting to produce the output:
+# : Use f-string formatting to produce the output:
 print(f"{year} {name} for about ${cost:,.0f}!")
 print("1922 Gibson L-5 CES for about $16,036!")
 # 1922 Gibson L-5 CES for about $16,036!
 
-# TODO: Using a for loop with the range function and f-string formatting,
+# : Using a for loop with the range function and f-string formatting,
 for i in range(0, 11):
     print(f"2 ^{i:2.0f} is {2 ** i:4.0f}")
 
