@@ -1,3 +1,9 @@
+"""
+CP1404 Practical
+lists warmup
+William Buttigieg 07/10/25
+"""
+
 numbers = [3, 1, 4, 1, 5, 9, 2]
 
 
