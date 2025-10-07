@@ -20,7 +20,7 @@ with open("numbers.txt", "r") as in_file:
     total = int(numbers[0].strip()) + int(numbers[1].strip())
 print(total)
 
-# 4.
+# 4.    should change bc rn its making a variable to store them all before it adds them.
 total = 0
 with open("numbers.txt", "r") as in_file:
     for line in in_file:
