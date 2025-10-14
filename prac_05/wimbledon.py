@@ -41,7 +41,6 @@ def process_records(records):
     return champion_to_count, winning_countries
 
 
-
 def display_records(champion_to_count, winning_countries):
     """Display records in specific format."""
     print("Wimbledon Champions:")
@@ -50,7 +49,6 @@ def display_records(champion_to_count, winning_countries):
     print()
     print(f"These {len(winning_countries)} countries have won wimbledon:")
     print(", ".join(sorted(winning_countries)))
-
 
 
 main()
