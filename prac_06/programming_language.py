@@ -3,7 +3,7 @@ CP1404 Practical 6
 Programming Language
 Estimated time for completion: 25 minutes
 Time started: 1pm
-Total time taken:
+Total time taken: 23 minutes
 """
 
 class ProgrammingLanguage:
