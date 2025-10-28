@@ -29,8 +29,8 @@ def test_is_vintage(guitar, another_guitar):
 
 def test_str(guitar, another_guitar):
     """Test str() method."""
-    print(f"{guitar.name} str() - expected Gibson L-5 CES (1922): $16,035.40. Got {guitar.__str__()}.")
-    print(f"{another_guitar.name} str() - expected Another Guitar (2016): $300.00. Got {another_guitar.__str__()}.")
+    print(f"{guitar.name} str() - expected Gibson L-5 CES (1922): $16,035.40. Got {guitar}.")
+    print(f"{another_guitar.name} str() - expected Another Guitar (2016): $300.00. Got {another_guitar}.")
 
 
 main()

@@ -4,7 +4,7 @@ Guitars
 
 Estimated time for completion: 35 minutes
 Time started: 1:31pm
-Total time taken: #TODO********** minutes
+Total time taken: 40 minutes
 """
 
 class Guitar:
