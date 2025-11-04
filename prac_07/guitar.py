@@ -7,8 +7,10 @@ Time started: 1:31pm
 Total time taken: 40 minutes
 """
 
+
 class Guitar:
     """Represent a guitar object."""
+
     def __init__(self, name="", year=0, cost=0):
         """Initialize a guitar instance."""
         self.name = name
@@ -17,7 +19,11 @@ class Guitar:
 
     def __str__(self):
         """Return a string representation of the guitar instance."""
-        return f"{self.name} ({self.year}): ${self.cost:,.2f}"
+        return f"{self.name} ({self.year}): ${self.cost}"
+
+    def __lt__(self, other):
+        """Compare two guitars' years."""
+        return self.year < other.year
 
     def get_age(self):
         """Return the age of the guitar."""
