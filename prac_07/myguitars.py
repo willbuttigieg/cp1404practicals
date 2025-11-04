@@ -18,6 +18,7 @@ def main():
 
 
 def read_guitars():
+    """Read guitar details from file"""
     guitars = []
     in_file = open("guitars.csv", "r")
     for line in in_file:
