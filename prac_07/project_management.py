@@ -1,7 +1,7 @@
 """
 CP1404 Practical 7
 Project Management
-Estimated completion time: 1 hour
+Estimated completion time: 1.5 hours
 Actual completion time:
 """
 
@@ -10,6 +10,7 @@ def main():
     """Menu with options for project management"""
     MENU = ("- (L)oad projects \n- (S)ave projects \n- (D)isplay projects \n- (F)ilter projects by date \n"
             "- (A)dd new project \n- (U)pdate project \n- (Q)uit")
+    print("Welcome to Pythonic Project Management")
     print(MENU)
     menu_choice = input(">>> ")
     while menu_choice != "Q":
@@ -18,7 +19,7 @@ def main():
         elif menu_choice == "S":
             save_projects()
         elif menu_choice == "D":
-            display_projects()
+            display_projects(projects)
         elif menu_choice == "F":
             filter_projects()
         elif menu_choice == "A":
@@ -40,9 +41,10 @@ def save_projects():
     """Prompt the user for a filename to save projects to and save them"""
 
 
-def display_projects():
+def display_projects(projects):
     """Display two groups: incomplete projects; completed projects, both sorted by priority"""
-
+    for project in projects:
+        print(project)
 
 def filter_projects():
     """Ask the user for a date and display only projects that start after that date, sorted by date"""
