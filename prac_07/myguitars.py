@@ -14,6 +14,7 @@ def main():
     add_guitar(guitars)
     sort_guitars(guitars)
     display_guitars(guitars)
+    save_guitars(guitars)
 
 
 def read_guitars():
@@ -49,9 +50,11 @@ def add_guitar(guitars):
         name = input("Name: ")
 
 
-# def save_guitars(guitars):
-#     """Save the list of guitars to file."""
-#     for guitar in guitars:
+def save_guitars(guitars):
+    """Save the list of guitars to file."""
+    with open("guitars.csv", "w") as file:
+        for guitar in guitars:
+            print(f"{guitar.name},{guitar.year},{guitar.cost}", file=file)
 
 
 main()
