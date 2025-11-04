@@ -4,7 +4,8 @@ Project Management
 Estimated completion time: 1.5 hours
 Actual completion time:
 """
-
+from project import Project
+DEFAULT_FILENAME = "projects.txt"
 
 def main():
     """Menu with options for project management"""
@@ -12,7 +13,7 @@ def main():
             "- (A)dd new project \n- (U)pdate project \n- (Q)uit")
     print("Welcome to Pythonic Project Management")
     print(MENU)
-    menu_choice = input(">>> ")
+    menu_choice = input(">>> ").upper()
     while menu_choice != "Q":
         if menu_choice == "L":
             load_projects()
@@ -29,12 +30,20 @@ def main():
         else:
             print("Invalid menu choice")
         print(MENU)
-        menu_choice = input(">>> ")
+        menu_choice = input(">>> ").upper()
     print("Thank you for using custom-built project management software.")
 
 
 def load_projects():
     """Prompt the user for a filename to load projects from and load them"""
+    projects = []
+    in_file = open(DEFAULT_FILENAME, "r")
+    in_file.readline()
+    for line in in_file:
+        parts = line.strip().split("\t")
+        project = Project(parts[0], parts[1], parts[2], parts[3], parts[4])
+        projects.append(project)
+    in_file.close()
 
 
 def save_projects():
