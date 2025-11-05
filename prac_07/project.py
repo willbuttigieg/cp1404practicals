@@ -4,6 +4,7 @@ Project class
 """
 from datetime import datetime
 
+
 class Project:
     """Represent a project object."""
 

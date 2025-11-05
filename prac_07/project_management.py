@@ -26,7 +26,7 @@ def main():
         elif menu_choice == "D":
             display_projects(projects)
         elif menu_choice == "F":
-            filter_projects()
+            filter_projects(projects)
         elif menu_choice == "A":
             projects.append(add_new_project())
         elif menu_choice == "U":
@@ -82,15 +82,24 @@ def display_projects(projects):
         print(project)
 
 
-def filter_projects():
+def filter_projects(projects):
     """Ask the user for a date and display only projects that start after that date, sorted by date"""
+    filter_date_string = input("Show projects that start after date (dd/mm/yyyy): ")
+    try:
+        filter_date = datetime.strptime(filter_date_string, "%d/%m/%Y").date()
+    except ValueError:
+        print("Invalid date. Use dd/mm/yyyy.")
+        return
+    for project in projects:
+        if project.start_date > filter_date:
+            print(project)
 
 
 def add_new_project():
     """Ask the user for the inputs and add a new project to memory"""
     print("Let's add a new project")
-    name  = input("Name: ")
-    start_date = input("Start date (dd/mm/yy): ")
+    name = input("Name: ")
+    start_date = input("Start date (dd/mm/yyyy): ")
     priority = input("Priority: ")
     estimated_cost = input("Cost estimate: $")
     completion_percentage = input("Completion percentage: ")
@@ -107,5 +116,6 @@ def update_project(projects):
     new_priority = input("New priority: ")
     projects[project_choice].completion_percentage = new_percentage
     projects[project_choice].priority = new_priority
+
 
 main()
