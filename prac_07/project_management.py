@@ -5,6 +5,7 @@ Estimated completion time: 1.5 hours
 Actual completion time:
 """
 from project import Project
+from datetime import datetime
 
 
 def main():
@@ -13,8 +14,6 @@ def main():
             "- (A)dd new project \n- (U)pdate project \n- (Q)uit")
     print("Welcome to Pythonic Project Management")
     projects = load_projects()
-    for project in projects:
-        print(project.completion_percentage)
     print(MENU)
     menu_choice = input(">>> ").upper()
     while menu_choice != "Q":
@@ -31,7 +30,7 @@ def main():
         elif menu_choice == "A":
             add_new_project()
         elif menu_choice == "U":
-            update_project()
+            update_project(projects)
         else:
             print("Invalid menu choice")
         print(MENU)
@@ -91,8 +90,15 @@ def add_new_project():
     """Ask the user for the inputs and add a new project to memory"""
 
 
-def update_project():
+def update_project(projects):
     """Choose a project, then modify the completion % and/or priority"""
-
+    for i, project in enumerate(projects):
+        print(f"{i} {project}")
+    project_choice = int(input("Project choice: "))
+    print(projects[project_choice])
+    new_percentage = int(input("New percentage: "))
+    new_priority = input("New priority: ")
+    projects[project_choice].completion_percentage = new_percentage
+    projects[project_choice].priority = new_priority
 
 main()
