@@ -7,7 +7,7 @@ from datetime import datetime
 class Project:
     """Represent a project object."""
 
-    def __init__(self, name, start_date, priority, estimated_cost, completion_percentage=0):
+    def __init__(self, name, start_date, priority, estimated_cost, completion_percentage):
         """Initialize a project instance."""
         self.name = name
         self.start_date = datetime.strptime(start_date, "%d/%m/%Y").date()

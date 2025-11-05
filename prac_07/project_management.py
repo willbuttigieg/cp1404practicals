@@ -28,7 +28,7 @@ def main():
         elif menu_choice == "F":
             filter_projects()
         elif menu_choice == "A":
-            add_new_project()
+            projects.append(add_new_project())
         elif menu_choice == "U":
             update_project(projects)
         else:
@@ -88,6 +88,13 @@ def filter_projects():
 
 def add_new_project():
     """Ask the user for the inputs and add a new project to memory"""
+    print("Let's add a new project")
+    name  = input("Name: ")
+    start_date = input("Start date (dd/mm/yy): ")
+    priority = input("Priority: ")
+    estimated_cost = input("Cost estimate: $")
+    completion_percentage = input("Completion percentage: ")
+    return Project(name, start_date, priority, estimated_cost, completion_percentage)
 
 
 def update_project(projects):
