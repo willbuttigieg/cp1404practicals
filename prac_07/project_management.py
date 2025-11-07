@@ -2,7 +2,7 @@
 CP1404 Practical 7
 Project Management
 Estimated completion time: 1.5 hours
-Actual completion time:
+Actual completion time: 3 hours yikes
 """
 from project import Project
 from datetime import datetime
@@ -29,13 +29,14 @@ def main():
             filter_projects(projects)
         elif menu_choice == "A":
             projects.append(add_new_project())
+            projects.sort()
         elif menu_choice == "U":
             update_project(projects)
         else:
             print("Invalid menu choice")
         print(MENU)
         menu_choice = input(">>> ").upper()
-    save_projects(projects)
+    optional_save_projects(projects)
     print("Thank you for using custom-built project management software.")
 
 
@@ -116,6 +117,15 @@ def update_project(projects):
     new_priority = input("New priority: ")
     projects[project_choice].completion_percentage = new_percentage
     projects[project_choice].priority = new_priority
+
+
+def optional_save_projects(projects):
+    """Save projects to default file if the user chooses to."""
+    user_choice = input("Would you like to save to projects.txt? ").lower()
+    if "no" in user_choice:
+        return
+    else:
+        save_projects(projects)
 
 
 main()
