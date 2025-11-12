@@ -31,4 +31,5 @@ class DynamicLabels(App):
             temp_label = Label(text=name)
             self.root.ids.entries_box.add_widget(temp_label)
 
+
 DynamicLabels().run()
