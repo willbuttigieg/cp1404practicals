@@ -1,8 +1,14 @@
+"""
+CP1404 Practical 9
+Taxi Simulator
+"""
+
 from silver_service_taxi import SilverServiceTaxi
 from taxi import Taxi
 
 
 def main():
+    """Main taxi simulator program."""
     taxis = [Taxi("Prius", 100), SilverServiceTaxi("Limo", 100, 2), SilverServiceTaxi("Hummer", 200, 4)]
     current_taxi = None
     total_fare = 0
@@ -40,12 +46,13 @@ def choose_taxi(current_taxi, taxis):
 
 
 def display_taxis(taxis):
+    """Display taxis in rows."""
     for i, taxi in enumerate(taxis):
         print(f"{i} - {taxi}")
 
 
 def drive_taxi(current_taxi):
-    """Drive the chosen taxi."""
+    """Drive the chosen taxi a given distance."""
     if current_taxi is None:
         print("You need to choose a taxi before you can drive")
         return 0

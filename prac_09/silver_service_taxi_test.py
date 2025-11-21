@@ -22,4 +22,3 @@ bronze_taxi.drive(22)
 assert bronze_taxi.get_fare() == round(1.23 * 6 * 22 + 4.5, 1)
 
 print("If you see this, all is well.")
-

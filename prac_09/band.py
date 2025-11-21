@@ -1,3 +1,6 @@
+"""CP1404 Prac 9 - Band Class"""
+
+
 class Band:
     """Band class"""
 
